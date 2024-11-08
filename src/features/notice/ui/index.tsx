@@ -18,7 +18,7 @@ export const Notice = ({ contents }: NoficeProps) => {
         <Image src={Noti} alt="notification" />
       </PopoverTrigger>
       <PopoverContent>
-        <div className="w-80 grid gap-4 bg-white rounded-[4px]">
+        <div className="w-80 grid gap-4 bg-white rounded-[4px] border border-gray-300">
           <div className="space-y-2">
             <h4 className="font-medium leading-none">알림</h4>
             <p className="text-sm text-muted-foreground">
