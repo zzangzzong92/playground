@@ -21,6 +21,29 @@ type MenyType = "Docs" | "Community";
 
 export const Header = ({ isLoggedIn }: HeaderProps) => {
   const [menuType, setMenuType] = useState<MenyType>("Docs");
+
+  const mockMenu: {id: number, title: string, imgUrl: string}[] = [
+    {
+      id: 1,
+      title: "Blog",
+      imgUrl: "https://github.com/shadcn.png",
+    },
+    {
+      id: 2,
+      title: "Rank",
+      imgUrl: "https://github.com/shadcn.png",
+    },
+    {
+      id: 3,
+      title: "Mypage",
+      imgUrl: "https://github.com/shadcn.png",
+    },
+    {
+      id: 1,
+      title: "Setting",
+      imgUrl: "https://github.com/shadcn.png",
+    },
+  ]
   return (
     <header className="mx-auto flex h-20 max-w-screen-2xl items-center justify-between">
       <div className="flex items-center gap-6">
@@ -73,6 +96,18 @@ export const Header = ({ isLoggedIn }: HeaderProps) => {
                 </SheetTitle>
               </SheetHeader>
               <div className="mt-5 w-full border border-gray-200" />
+              {mockMenu.map((menu, id) => (
+                <>
+                  <Link href="/" key={id}>
+                    <div className="flex gap-3 mt-5 border border-red-200">
+                      <Avatar>
+                        <AvatarImage src={menu.imgUrl} alt="menuImg" className="size-10"/>
+                        </Avatar>
+                        <p className="items-center justify-center pt-2">{menu?.title}</p>
+                    </div>
+                  </Link>
+                </>
+              ))}
             </SheetContent>
           </Sheet>
         </div>
